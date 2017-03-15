@@ -1,0 +1,29 @@
+<div>
+    <div ng-if="$ctrl.currencies.length" class="alert alert-success">
+        Currency exchange rates <strong>{{$ctrl.ratesDate}}</strong>
+    </div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>
+                currency
+            </th>
+            <th>
+                code
+            </th>
+            <th>
+                rate
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="currency in $ctrl.currencies" >
+            <td>{{currency.currency}}</td>
+            <td>{{currency.code}}</td>
+            <td class="badge" ng-class="currency.mid > 1 ? 'red-badge' : 'green-badge'">
+                {{currency.mid}}
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
